@@ -1,0 +1,6 @@
+{
+  "name": "Prime Fresh Oil Mills — B2B Bulk Manufacturing & Supply",
+  "description": "Official B2B manufacturing and bulk supply portal for Prime Fresh Oil Mills. Supplying Pure Yellow Mustard Oil, Groundnut Seeds, Sesame Seeds & Oil, and De-Oiled Cakes for FMCG, edible oil brands, and private-label partners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

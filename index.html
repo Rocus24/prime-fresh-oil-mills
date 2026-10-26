@@ -1,0 +1,2491 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Fresh Oil Mills — B2B Bulk Manufacturing &amp; Supply</title>
+    <meta name="description" content="Official B2B manufacturing and bulk supply portal for Prime Fresh Oil Mills. Supplying Pure Yellow Mustard Oil, Groundnut Seeds, Sesame Seeds &amp; Oil, and De-Oiled Cakes for FMCG, edible oil brands, and private-label partners." />
+    <meta property="og:title" content="Prime Fresh Oil Mills — B2B Bulk Manufacturing &amp; Supply" />
+    <meta property="og:description" content="Official B2B manufacturing and bulk supply portal for Prime Fresh Oil Mills. Supplying Pure Yellow Mustard Oil, Groundnut Seeds, Sesame Seeds &amp; Oil, and De-Oiled Cakes for FMCG, edible oil brands, and private-label partners." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Plus Jakarta Sans (Primary Modern Grotesk) + Outfit (Crisp Geometric) + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Plus Jakarta Sans"', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', '"Outfit"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              pine: {
+                DEFAULT: '#1C2826',
+                dark: '#141F1D',
+                light: '#2D3F3B',
+              },
+              mustard: {
+                DEFAULT: '#D48B38',
+                gold: '#E9C46A',
+                hover: '#B87428',
+              },
+              terracotta: {
+                DEFAULT: '#7F5539',
+                light: '#9C6644',
+              },
+              alabaster: '#FAF7F2',
+              stoneborder: '#E8E2D8',
+              cardbg: '#FFFDF9',
+            },
+            boxShadow: {
+              warm: '0 4px 20px rgba(28, 40, 38, 0.06)',
+              warmLg: '0 8px 30px rgba(28, 40, 38, 0.12)',
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- GSAP + ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper.js CDN (CSS & JS for 3D EffectCoverflow Carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+        color: #1C2826;
+        background-color: #FAF7F2;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .font-display {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .text-balance {
+        text-wrap: balance;
+      }
+      .catalog-card {
+        transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
+      }
+      .catalog-card:hover {
+        transform: translateY(-4px);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .catalog-card {
+          transition: none;
+        }
+      }
+
+      /* Swiper 3D Coverflow Custom Styling */
+      .core-category-swiper {
+        width: 100%;
+        padding-top: 16px;
+        padding-bottom: 56px;
+      }
+      .core-category-swiper .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 320px;
+        max-width: 85vw;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .core-category-swiper .swiper-slide-active {
+        border-color: #D48B38 !important;
+        box-shadow: 0 12px 32px rgba(212, 139, 56, 0.2) !important;
+      }
+      .core-category-swiper .swiper-pagination-bullet {
+        background-color: #D48B38 !important;
+        opacity: 0.35;
+        transition: all 0.3s ease;
+      }
+      .core-category-swiper .swiper-pagination-bullet-active {
+        opacity: 1;
+        width: 28px !important;
+        border-radius: 9999px !important;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        color: #1C2826 !important;
+        background-color: #FFFDF9;
+        border: 1px solid #E8E2D8;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 9999px;
+        box-shadow: 0 4px 16px rgba(28, 40, 38, 0.08);
+        transition: all 0.2s ease;
+      }
+      .swiper-button-next:hover, .swiper-button-prev:hover {
+        background-color: #FAF7F2;
+        border-color: #D48B38;
+        transform: scale(1.06);
+      }
+      .swiper-button-next:after, .swiper-button-prev:after {
+        font-size: 16px !important;
+        font-weight: 700;
+      }
+
+      /* Parallax Catalog Rows Styling */
+      #catalog-parallax-container {
+        scrollbar-width: thin;
+        scrollbar-color: #E8E2D8 transparent;
+      }
+      @media (max-width: 767px) {
+        #catalog-parallax-container {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x mandatory;
+          padding-bottom: 1.25rem;
+        }
+        .catalog-row-1, .catalog-row-2 {
+          width: max-content;
+          scroll-snap-align: start;
+        }
+      }
+
+      /* Liquid Glassmorphism Blob Animations */
+      @keyframes floatBlob1 {
+        0%, 100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        50% {
+          transform: translate(45px, -35px) scale(1.12);
+        }
+      }
+      @keyframes floatBlob2 {
+        0%, 100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        50% {
+          transform: translate(-40px, 30px) scale(1.08);
+        }
+      }
+      .animate-liquid-blob-1 {
+        animation: floatBlob1 14s ease-in-out infinite;
+      }
+      .animate-liquid-blob-2 {
+        animation: floatBlob2 18s ease-in-out infinite reverse;
+      }
+    </style>
+  </head>
+  <body class="bg-[#FAF7F2] text-[#1C2826] antialiased selection:bg-[#E9C46A] selection:text-[#1C2826]">
+    <!-- Hidden #root for environment health compatibility -->
+    <div id="root" class="hidden" aria-hidden="true"></div>
+
+    <!-- =====================================================================
+         STICKY NAVBAR (Heritage Cold-Press Botanical Pine Theme)
+         Deep Botanical Pine (#1C2826) with Toasted Mustard Gold (#E9C46A) accents
+    ====================================================================== -->
+    <header class="sticky top-0 z-40 h-16 md:h-20 bg-[#1C2826]/95 backdrop-blur-md border-b border-[#2D3F3B] transition-colors shadow-sm">
+      <div class="max-w-7xl mx-auto h-full px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-8">
+        <!-- Zone 1: Brand Logo + Wordmark -->
+        <a href="#" class="flex items-center gap-2 sm:gap-3 whitespace-nowrap shrink-0 group focus:outline-none">
+          <img
+            id="brand-logo"
+            src="./logo.png"
+            alt="Prime Fresh Oil Mills"
+            referrerpolicy="no-referrer"
+            class="h-9 sm:h-11 w-auto object-contain rounded-full bg-white/10 p-1"
+            onerror="this.style.display='none';"
+          />
+          <span class="font-display text-sm sm:text-xl font-bold tracking-tight text-white group-hover:text-[#E9C46A] transition-colors">
+            Prime Fresh Oil Mills
+          </span>
+        </a>
+
+        <!-- Zone 2: 5 Navigation Links -->
+        <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-7 text-sm font-medium text-[#E8E2D8]">
+          <a href="#story-scroll" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">Story</a>
+          <a href="#category-carousel" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">3D Lines</a>
+          <a href="#hero-product" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">Hero Oil</a>
+          <a href="#catalog" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">Catalog</a>
+          <a href="#facilities" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">Facilities</a>
+          <a href="#bulk-process" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">Bulk Process</a>
+          <a href="#quote-form" class="hover:text-[#E9C46A] hover:underline underline-offset-8 decoration-[#E9C46A] decoration-2 transition-colors whitespace-nowrap shrink-0">Contact</a>
+        </nav>
+
+        <!-- Zone 3: Primary CTA Button on Dark Navbar -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="#quote-form"
+            class="px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-[#1C2826] bg-[#E9C46A] hover:bg-[#dfb552] active:bg-[#c99f3b] rounded-lg shadow-sm transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E9C46A]"
+          >
+            Request Quote
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =====================================================================
+           SECTION 1: 25/75 SPLIT SCROLL ANIMATION & VIBRANT CANVAS (#story-scroll)
+           - 400vh scroll section with sticky side-by-side layout
+           - LEFT COLUMN (25% / lg:col-span-1): Clean B2B typography, no heavy glassmorphism
+           - RIGHT COLUMN (75% / lg:col-span-3): Framed <canvas id="scroll-canvas">
+           - REMOVED ALL DARK TINTS: 100% full brightness, saturation & vibrancy
+      ====================================================================== -->
+      <section id="story-scroll" class="relative w-full bg-[#FAF7F2]" style="height: 400vh;" aria-label="Seed to Oil Manufacturing Story">
+        <div class="sticky top-0 left-0 h-screen w-full overflow-hidden bg-[#FAF7F2] flex items-center">
+          <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center lg:grid lg:grid-cols-4 gap-6 lg:gap-8 items-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+            
+            <!-- LEFT COLUMN (25% / lg:col-span-1): 3 Scrolling B2B Text Story Cards -->
+            <div class="relative w-full min-h-[170px] sm:min-h-[220px] lg:min-h-[380px] flex items-center lg:col-span-1 order-2 lg:order-1">
+              
+              <!-- SCROLL STORY OVERLAY 1: 0% - 35% -->
+              <div
+                id="story-overlay-1"
+                class="story-overlay absolute inset-x-0 transition-all duration-300 pointer-events-auto"
+                style="opacity: 1; transform: translateY(0px);"
+              >
+                <div class="p-1 sm:p-2 text-[#1C2826]">
+                  <p class="text-xs font-mono font-semibold tracking-wider text-[#7F5539] mb-2 uppercase">
+                    01 · Seed Selection
+                  </p>
+                  <h1 class="font-display text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-[#1C2826]">
+                    From Trusted Agricultural Roots
+                  </h1>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Sourcing the finest whole Yellow Mustard, Groundnut, and Sesame seeds directly from prime agricultural heartlands for consistent milling extraction.
+                  </p>
+                  <div class="mt-4 flex items-center gap-2 text-[11px] font-mono text-[#7F5539]">
+                    <span class="inline-block w-2 h-2 rounded-full bg-[#D48B38]"></span>
+                    <span>Verified Milled-Grade Seed Lots</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCROLL STORY OVERLAY 2: 35% - 70% -->
+              <div
+                id="story-overlay-2"
+                class="story-overlay pointer-events-none absolute inset-x-0 transition-all duration-300"
+                style="opacity: 0; transform: translateY(20px);"
+              >
+                <div class="p-1 sm:p-2 text-[#1C2826]">
+                  <p class="text-xs font-mono font-semibold tracking-wider text-[#7F5539] mb-2 uppercase">
+                    02 · Cold Extraction
+                  </p>
+                  <h2 class="font-display text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-[#1C2826]">
+                    Precision Pressing &amp; Extraction
+                  </h2>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Continuous mechanical expeller pressing and micro-filtration engineered specifically for institutional buyers, edible oil brands, and private-label partners.
+                  </p>
+                  <div class="mt-4 flex items-center gap-2 text-[11px] font-mono text-[#7F5539]">
+                    <span class="inline-block w-2 h-2 rounded-full bg-[#D48B38]"></span>
+                    <span>Mechanical Screw Expeller Processing</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCROLL STORY OVERLAY 3: 70% - 100% (Hero Product Reveal) -->
+              <div
+                id="story-overlay-3"
+                class="story-overlay pointer-events-none absolute inset-x-0 transition-all duration-300"
+                style="opacity: 0; transform: translateY(20px);"
+              >
+                <div class="p-1 sm:p-2 text-[#1C2826]">
+                  <p class="text-xs font-mono font-semibold tracking-wider text-[#7F5539] mb-2 uppercase">
+                    03 · Flagship Supply
+                  </p>
+                  <h2 class="font-display text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-[#1C2826]">
+                    Pure Yellow Mustard Oil
+                  </h2>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Manufactured and supplied mill-direct in bulk tankers, drums, and commercial tins with guaranteed batch uniformity and natural golden hue.
+                  </p>
+                  <div class="mt-4 flex flex-wrap items-center gap-2.5">
+                    <a
+                      href="#quote-form"
+                      onclick="selectProductForQuote('Yellow Mustard Oil (Bulk)')"
+                      class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-white bg-[#D48B38] hover:bg-[#B87428] transition-colors shadow-sm whitespace-nowrap"
+                    >
+                      Request Bulk Quote
+                    </a>
+                    <a
+                      href="#hero-product"
+                      class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-[#1C2826] bg-[#FFFDF9] border border-[#E8E2D8] hover:bg-stone-100 transition-colors whitespace-nowrap"
+                    >
+                      Bulk Specs
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN (75% / lg:col-span-3): Framed Canvas Container (100% Brightness & Saturation) -->
+            <div class="w-full lg:col-span-3 order-1 lg:order-2 flex flex-col justify-center">
+              <div class="relative w-full h-[52vh] sm:h-[62vh] lg:h-[78vh] rounded-3xl overflow-hidden shadow-2xl border border-[#E8E2D8] bg-[#FAF7F2]">
+                <!-- 100% full brightness vibrant Canvas (Zero dark tints or scrims) -->
+                <canvas
+                  id="scroll-canvas"
+                  data-testid="scroll-canvas"
+                  class="w-full h-full block"
+                ></canvas>
+
+                <!-- Hidden Source Video (Directly loaded from ./story.mp4) -->
+                <video
+                  id="source-video"
+                  src="./story.mp4"
+                  muted
+                  playsinline
+                  preload="auto"
+                  crossorigin="anonymous"
+                  class="hidden"
+                ></video>
+
+                <!-- Frame Extraction Progress Pill -->
+                <div
+                  id="extraction-status"
+                  class="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-lg bg-[#1C2826]/85 text-[#E9C46A] border border-[#E9C46A]/20 text-[11px] font-mono backdrop-blur-md transition-opacity duration-300"
+                >
+                  <span id="extraction-status-text">Buffering 120 scroll frames...</span>
+                </div>
+
+                <!-- Frame Indicator Bottom Right Pill -->
+                <div class="absolute bottom-4 right-4 z-20 px-3 py-1.5 rounded-lg bg-[#1C2826]/80 text-[#E8E2D8] text-[11px] font-mono backdrop-blur-sm pointer-events-none">
+                  <span id="scroll-progress-readout" class="tabular-nums">FRAME 001 / 120</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 1.5: 3D COVERFLOW CAROUSEL FOR CORE CATEGORIES (#category-carousel)
+           Powered by Swiper.js EffectCoverflow displaying the 4 core business lines:
+           1. Flagship Yellow Mustard Oil
+           2. Groundnut Seeds & Kernels
+           3. Sesame Seeds (Natural & Sorted)
+           4. Expeller De-Oiled Cakes (Livestock Feed)
+      ====================================================================== -->
+      <section id="category-carousel" class="py-16 lg:py-24 bg-[#FAF7F2] border-b border-[#E8E2D8] overflow-hidden" aria-label="Core Manufacturing Business Lines">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#7F5539] uppercase">
+              <span>CORE MANUFACTURING LINES</span>
+              <span aria-hidden="true">·</span>
+              <span>3D COVERFLOW SHOWCASE</span>
+            </div>
+            <h2 class="mt-2 font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1C2826] tracking-tight text-balance">
+              Engineered for Bulk Supply &amp; Contract Milling
+            </h2>
+            <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] max-w-xl mx-auto leading-relaxed">
+              Explore our 4 primary agricultural oilseed and commercial byproduct divisions. Drag, swipe, or click any card to inspect specifications.
+            </p>
+          </div>
+
+          <!-- Swiper Container with 3D Coverflow Effect -->
+          <div class="mt-10 relative max-w-5xl mx-auto px-2">
+            <div class="swiper core-category-swiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1: Flagship Yellow Mustard Oil -->
+                <div class="swiper-slide rounded-2xl bg-[#FFFDF9] border border-[#E8E2D8] p-5 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] flex flex-col justify-between">
+                  <div>
+                    <div class="relative aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] border border-[#E8E2D8]">
+                      <img
+                        src="./product-8.jpg"
+                        alt="Flagship Yellow Mustard Oil"
+                        referrerpolicy="no-referrer"
+                        class="w-full h-full object-cover"
+                      />
+                      <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                        Flagship Bestseller
+                      </span>
+                    </div>
+                    <div class="mt-4">
+                      <p class="text-[11px] font-mono font-semibold text-[#7F5539] uppercase tracking-wider">
+                        Division 01
+                      </p>
+                      <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                        Flagship Yellow Mustard Oil
+                      </h3>
+                      <p class="mt-1.5 text-xs text-[#2D3F3B] line-clamp-2 leading-relaxed">
+                        Expeller-pressed pure yellow mustard oil and high-grade cleaned whole seeds for FMCG, regional brands, and private-label packers.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="mt-4 pt-3 border-t border-[#E8E2D8] flex items-center justify-between">
+                    <span class="text-[11px] font-medium text-[#2D3F3B]/80">Tankers &amp; Drums</span>
+                    <button
+                      type="button"
+                      onclick="selectProductForQuote('Yellow Mustard Oil (Bulk)')"
+                      class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>Inquire Specs</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Groundnut Seeds & Kernels -->
+                <div class="swiper-slide rounded-2xl bg-[#FFFDF9] border border-[#E8E2D8] p-5 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] flex flex-col justify-between">
+                  <div>
+                    <div class="relative aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] border border-[#E8E2D8]">
+                      <img
+                        src="./product-4.jpg"
+                        alt="Groundnut Seeds & Kernels"
+                        referrerpolicy="no-referrer"
+                        class="w-full h-full object-cover"
+                      />
+                      <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                        Bestseller
+                      </span>
+                    </div>
+                    <div class="mt-4">
+                      <p class="text-[11px] font-mono font-semibold text-[#7F5539] uppercase tracking-wider">
+                        Division 02
+                      </p>
+                      <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                        Groundnut Seeds &amp; Kernels
+                      </h3>
+                      <p class="mt-1.5 text-xs text-[#2D3F3B] line-clamp-2 leading-relaxed">
+                        Shelled milling-grade groundnut kernels selected for cold pressing, culinary production, and wholesale bulk supply.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="mt-4 pt-3 border-t border-[#E8E2D8] flex items-center justify-between">
+                    <span class="text-[11px] font-medium text-[#2D3F3B]/80">Jute &amp; HDPE Bags</span>
+                    <button
+                      type="button"
+                      onclick="selectProductForQuote('Groundnut Seeds — Shelled Groundnut Kernels')"
+                      class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>Inquire Specs</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Sesame Seeds (Natural & Sorted) -->
+                <div class="swiper-slide rounded-2xl bg-[#FFFDF9] border border-[#E8E2D8] p-5 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] flex flex-col justify-between">
+                  <div>
+                    <div class="relative aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] border border-[#E8E2D8]">
+                      <img
+                        src="./product-5.jpg"
+                        alt="Sesame Seeds (Natural & Sorted)"
+                        referrerpolicy="no-referrer"
+                        class="w-full h-full object-cover"
+                      />
+                      <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                        Cold-Press Grade
+                      </span>
+                    </div>
+                    <div class="mt-4">
+                      <p class="text-[11px] font-mono font-semibold text-[#7F5539] uppercase tracking-wider">
+                        Division 03
+                      </p>
+                      <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                        Sesame Seeds (Natural &amp; Sorted)
+                      </h3>
+                      <p class="mt-1.5 text-xs text-[#2D3F3B] line-clamp-2 leading-relaxed">
+                        Natural white, sorted, and black sesame seeds with high oil concentration for pressing, bakery, and food manufacturing.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="mt-4 pt-3 border-t border-[#E8E2D8] flex items-center justify-between">
+                    <span class="text-[11px] font-medium text-[#2D3F3B]/80">Sorted Lots</span>
+                    <button
+                      type="button"
+                      onclick="selectProductForQuote('Sesame Seeds & Oil — Natural White Sesame Seeds (Bulk)')"
+                      class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>Inquire Specs</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Slide 4: Expeller De-Oiled Cakes (Livestock Feed) -->
+                <div class="swiper-slide rounded-2xl bg-[#FFFDF9] border border-[#E8E2D8] p-5 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] flex flex-col justify-between">
+                  <div>
+                    <div class="relative aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] border border-[#E8E2D8]">
+                      <img
+                        src="./product-1.jpg"
+                        alt="Expeller De-Oiled Cakes (Livestock Feed)"
+                        referrerpolicy="no-referrer"
+                        class="w-full h-full object-cover"
+                      />
+                      <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                        High-Protein Feed
+                      </span>
+                    </div>
+                    <div class="mt-4">
+                      <p class="text-[11px] font-mono font-semibold text-[#7F5539] uppercase tracking-wider">
+                        Division 04
+                      </p>
+                      <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                        Expeller De-Oiled Cakes (Feed)
+                      </h3>
+                      <p class="mt-1.5 text-xs text-[#2D3F3B] line-clamp-2 leading-relaxed">
+                        Nutrient-rich pressed oil cake flakes and slabs supplied in volume for cattle feed compounders, poultry feed, and livestock farms.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="mt-4 pt-3 border-t border-[#E8E2D8] flex items-center justify-between">
+                    <span class="text-[11px] font-medium text-[#2D3F3B]/80">Bulk Truckloads</span>
+                    <button
+                      type="button"
+                      onclick="selectProductForQuote('De-Oiled Cakes — Mustard Oil Cake (Pressed Flakes)')"
+                      class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>Inquire Specs</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pagination Dots -->
+              <div class="swiper-pagination"></div>
+
+              <!-- Navigation Controls -->
+              <div class="swiper-button-prev hidden sm:flex"></div>
+              <div class="swiper-button-next hidden sm:flex"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 2: HERO PRODUCT SPOTLIGHT (#hero-product)
+           Dedicated corporate B2B showcase for Pure Yellow Mustard Oil.
+      ====================================================================== -->
+      <section id="hero-product" class="py-20 lg:py-28 bg-[#FAF7F2] border-b border-[#E8E2D8]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+            <!-- Left Column: B2B Value Proposition & Partner Fit (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#7F5539]">
+                  <span>FLAGSHIP B2B PRODUCT LINE</span>
+                  <span aria-hidden="true">·</span>
+                  <span>BULK MANUFACTURING &amp; WHOLESALE</span>
+                </div>
+
+                <h2 class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C2826] tracking-tight text-balance">
+                  Pure Yellow Mustard Oil — Manufactured for Commercial &amp; Brand Supply
+                </h2>
+
+                <p class="mt-5 text-base sm:text-lg text-[#2D3F3B] leading-relaxed max-w-2xl">
+                  Prime Fresh Oil Mills manufactures and supplies pure Yellow Mustard Oil in bulk quantities tailored for institutional buyers, edible oil brands, and commercial food manufacturers seeking dependable mill-direct sourcing.
+                </p>
+
+                <!-- 3 Key B2B Partner Segments -->
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div class="p-5 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.04)]">
+                    <p class="text-xs font-mono text-[#7F5539] font-semibold">01. FMCG COMPANIES</p>
+                    <h3 class="mt-1.5 font-display text-base font-bold text-[#1C2826]">
+                      Commercial Food &amp; Culinary Production
+                    </h3>
+                    <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                      Consistent pungency, natural golden hue, and clean extraction profile suitable for food processing, pickle manufacturing, and recipe formulations.
+                    </p>
+                  </div>
+
+                  <div class="p-5 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.04)]">
+                    <p class="text-xs font-mono text-[#7F5539] font-semibold">02. EDIBLE OIL BRANDS</p>
+                    <h3 class="mt-1.5 font-display text-base font-bold text-[#1C2826]">
+                      Mill-Direct Bulk Oil Procurement
+                    </h3>
+                    <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                      Reliable bulk supply of expeller-pressed yellow mustard oil ready for your regional or national bottling lines and wholesale networks.
+                    </p>
+                  </div>
+
+                  <div class="p-5 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.04)]">
+                    <p class="text-xs font-mono text-[#7F5539] font-semibold">03. PRIVATE-LABEL</p>
+                    <h3 class="mt-1.5 font-display text-base font-bold text-[#1C2826]">
+                      Custom B2B Dispatch &amp; Trade Supply
+                    </h3>
+                    <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                      Flexible bulk packaging and dispatch coordination aligned with private-label retail chains, institutional buyers, and commodity traders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA & Direct Procurement Action Bar -->
+              <div class="mt-8 pt-6 border-t border-[#E8E2D8] flex flex-wrap items-center justify-between gap-4">
+                <div class="text-xs sm:text-sm text-[#2D3F3B]">
+                  <span class="font-semibold text-[#1C2826]">Direct Mill Inquiry:</span>
+                  <span>Speak with our procurement desk for current batch availability and dispatch terms.</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                  <a
+                    href="#quote-form"
+                    onclick="selectProductForQuote('Yellow Mustard Oil (Bulk)')"
+                    class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#D48B38] hover:bg-[#B87428] transition-colors whitespace-nowrap shrink-0 shadow-sm"
+                  >
+                    Inquire Yellow Mustard Oil
+                  </a>
+                  <a
+                    href="tel:+919057292529"
+                    class="px-4 py-2.5 rounded-lg text-sm font-semibold text-[#1C2826] bg-[#FFFDF9] border border-[#E8E2D8] hover:bg-stone-100 transition-colors whitespace-nowrap shrink-0"
+                  >
+                    Call +91 90572 92529
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Dedicated Corporate B2B Technical & Visual Showcase for Liquid Yellow Mustard Oil (5 cols) -->
+            <div class="lg:col-span-5">
+              <div class="h-full rounded-2xl bg-gradient-to-br from-[#1C2826] via-[#141F1D] to-[#2D3F3B] text-white p-7 sm:p-9 border border-[#E9C46A]/30 flex flex-col justify-between relative overflow-hidden shadow-xl">
+                <!-- Top Header inside spotlight card -->
+                <div class="relative z-10 flex items-center justify-between gap-4 border-b border-white/15 pb-5">
+                  <div>
+                    <p class="text-xs font-mono text-[#E9C46A]">PRODUCT SPECIFICATION PROFILE</p>
+                    <h3 class="mt-1 font-display text-xl font-bold text-white">
+                      Pure Yellow Mustard Oil
+                    </h3>
+                  </div>
+                  <img
+                    src="./logo.png"
+                    alt="Prime Fresh Oil Mills Emblem"
+                    referrerpolicy="no-referrer"
+                    class="h-12 w-12 rounded-full bg-white/10 p-1 object-contain shrink-0"
+                    onerror="this.style.display='none';"
+                  />
+                </div>
+
+                <!-- Center Visual: Golden Liquid Oil Drop Illustration (Not a seed photo) -->
+                <div class="relative z-10 my-8 flex flex-col items-center justify-center text-center py-6 px-4 rounded-xl bg-white/5 border border-white/10">
+                  <svg class="w-24 h-24 text-[#E9C46A]" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Golden Liquid Yellow Mustard Oil Drop">
+                    <defs>
+                      <linearGradient id="mustardOilGrad" x1="20" y1="15" x2="100" y2="105" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#FEF08A" />
+                        <stop offset="45%" stop-color="#E9C46A" />
+                        <stop offset="100%" stop-color="#D48B38" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="60" cy="60" r="54" stroke="rgba(233,196,106,0.3)" stroke-width="1.5" stroke-dasharray="4 4" />
+                    <path d="M60 16C60 16 26 56 26 78C26 96.7777 41.2223 112 60 112C78.7777 112 94 96.7777 94 78C94 56 60 16 60 16Z" fill="url(#mustardOilGrad)" />
+                    <path d="M44 76C44 64 52 46 55 39C46 51 37 65 37 77C37 89 45 98 56 101C48 96 44 87 44 76Z" fill="#FFFDF9" fill-opacity="0.65" />
+                  </svg>
+                  <p class="mt-3 font-display text-lg font-bold text-[#E9C46A]">
+                    Expeller-Pressed Golden Liquid Oil
+                  </p>
+                  <p class="mt-1 text-xs text-[#E8E2D8] max-w-xs">
+                    Extracted from selected yellow mustard seeds at Prime Fresh Oil Mills for bulk commercial buyers.
+                  </p>
+                </div>
+
+                <!-- Structured B2B Procurement Attributes -->
+                <dl class="relative z-10 space-y-3 text-xs sm:text-sm border-t border-white/15 pt-5">
+                  <div class="flex items-baseline justify-between gap-4">
+                    <dt class="text-[#E8E2D8]">Product Form</dt>
+                    <dd class="font-semibold text-white text-right">Liquid Edible Oil (Yellow Mustard)</dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <dt class="text-[#E8E2D8]">Primary Raw Material</dt>
+                    <dd class="font-semibold text-white text-right">Selected Yellow Mustard Seeds</dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <dt class="text-[#E8E2D8]">Supply Mode</dt>
+                    <dd class="font-semibold text-[#E9C46A] text-right">Bulk &amp; Wholesale B2B Dispatch</dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <dt class="text-[#E8E2D8]">Target Partners</dt>
+                    <dd class="font-semibold text-white text-right">FMCG, Oil Brands &amp; Private-Label</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 3: OPPOSING SCROLL PARALLAX CATALOG (#catalog)
+           8 Wilmar-style product cards split into .catalog-row-1 and .catalog-row-2
+           moving in opposing horizontal directions as the user scrolls.
+      ====================================================================== -->
+      <section id="catalog" class="py-20 lg:py-28 bg-[#FAF7F2] border-b border-[#E8E2D8] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <!-- Section Header & Filter Controls -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#7F5539]">
+                <span>B2B COMMODITY &amp; MILL PORTFOLIO</span>
+                <span aria-hidden="true">·</span>
+                <span>8 VERIFIED PRODUCT LINES</span>
+              </div>
+              <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-[#1C2826] tracking-tight">
+                Bulk Product Catalog
+              </h2>
+              <p class="mt-2 text-sm sm:text-base text-[#2D3F3B] max-w-2xl">
+                Oilseeds, pressed cakes, and bulk commodities supplied directly from our milling and sorting operations. Experience our kinetic inventory rows or click any specs pill to pre-fill your quote request.
+              </p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div
+              role="group"
+              aria-label="Filter products by category"
+              class="flex flex-wrap items-center gap-1.5 p-1.5 bg-[#FFFDF9] border border-[#E8E2D8] rounded-xl shrink-0 shadow-[0_4px_20px_rgba(28,40,38,0.04)]"
+            >
+              <button
+                type="button"
+                data-filter="All"
+                onclick="filterCatalog('All')"
+                class="catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 bg-[#1C2826] text-[#E9C46A] shadow-sm"
+              >
+                All (8)
+              </button>
+              <button
+                type="button"
+                data-filter="Yellow Mustard"
+                onclick="filterCatalog('Yellow Mustard')"
+                class="catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#2D3F3B] hover:text-[#1C2826] hover:bg-[#FAF7F2]"
+              >
+                Yellow Mustard
+              </button>
+              <button
+                type="button"
+                data-filter="Groundnut Seeds"
+                onclick="filterCatalog('Groundnut Seeds')"
+                class="catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#2D3F3B] hover:text-[#1C2826] hover:bg-[#FAF7F2]"
+              >
+                Groundnut Seeds
+              </button>
+              <button
+                type="button"
+                data-filter="Sesame Seeds & Oil"
+                onclick="filterCatalog('Sesame Seeds & Oil')"
+                class="catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#2D3F3B] hover:text-[#1C2826] hover:bg-[#FAF7F2]"
+              >
+                Sesame Seeds &amp; Oil
+              </button>
+              <button
+                type="button"
+                data-filter="De-Oiled Cakes"
+                onclick="filterCatalog('De-Oiled Cakes')"
+                class="catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#2D3F3B] hover:text-[#1C2826] hover:bg-[#FAF7F2]"
+              >
+                De-Oiled Cakes
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parallax Wrapper (overflow-hidden to prevent browser horizontal scrolling) -->
+        <div id="catalog-parallax-container" class="w-full overflow-hidden space-y-6 sm:space-y-8 py-2">
+          
+          <!-- ROW 1: Cards 1 to 4 (moves right on scroll) -->
+          <div class="catalog-row-1 flex items-stretch gap-6 sm:gap-8 px-4 sm:px-8 w-max will-change-transform">
+            <!-- Product 1: ./product-1.jpg -->
+            <article
+              data-category="De-Oiled Cakes"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-1.jpg"
+                    alt="Mustard Oil Cake (Pressed De-Oiled Flakes)"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    High-Protein Feed
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>De-Oiled Cakes</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Pressed Cake Flakes</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Mustard Oil Cake (Pressed Flakes)
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Pressed mustard seed cake flakes supplied in bulk for cattle feed manufacturers, livestock nutrition, and agricultural trade.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('De-Oiled Cakes — Mustard Oil Cake (Pressed Flakes)')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Mustard Cake Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Product 2: ./product-2.jpg -->
+            <article
+              data-category="Yellow Mustard"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-2.jpg"
+                    alt="Whole Brown & Black Mustard Seeds (Milling Grade)"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    Flagship Bestseller
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>Yellow Mustard</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Whole Oilseeds</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Whole Mustard Seeds (Milling Grade)
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Cleaned whole mustard oilseeds graded for oil expeller pressing, spice processors, and bulk agricultural commodity buyers.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('Yellow Mustard — Whole Mustard Seeds (Milling Grade)')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Mustard Seed Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Product 3: ./product-3.jpg -->
+            <article
+              data-category="Sesame Seeds & Oil"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-3.jpg"
+                    alt="Natural Black Sesame Seeds"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    Cold-Press Grade
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>Sesame Seeds &amp; Oil</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Cleaned Seeds</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Natural Black Sesame Seeds
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Sorted black sesame seeds for sesame oil extraction, food ingredient processors, and bulk wholesale trade.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('Sesame Seeds & Oil — Natural Black Sesame Seeds')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Black Sesame Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Product 4: ./product-4.jpg -->
+            <article
+              data-category="Groundnut Seeds"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-4.jpg"
+                    alt="Shelled Groundnut Seeds (Peanut Kernels)"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    Bestseller
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>Groundnut Seeds</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Raw Kernels</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Shelled Groundnut Seeds (Kernels)
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Selected groundnut kernels sourced for edible oil milling, FMCG food manufacturing, and bulk wholesale supply.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('Groundnut Seeds — Shelled Groundnut Kernels')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Groundnut Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- ROW 2: Cards 5 to 8 (moves left on scroll) -->
+          <div class="catalog-row-2 flex items-stretch gap-6 sm:gap-8 px-4 sm:px-8 w-max will-change-transform">
+            <!-- Product 5: ./product-5.jpg -->
+            <article
+              data-category="Sesame Seeds & Oil"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-5.jpg"
+                    alt="Natural White Sesame Seeds (Milling & Trade Grade)"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    Cold-Press Grade
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>Sesame Seeds &amp; Oil</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Bulk Sesame</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Natural White Sesame Seeds (Bulk)
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    High-oil-content white sesame seeds suitable for sesame oil pressing, bakery/confectionery supply, and B2B procurement.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('Sesame Seeds & Oil — Natural White Sesame Seeds (Bulk)')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>White Sesame Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Product 6: ./product-6.jpg -->
+            <article
+              data-category="Sesame Seeds & Oil"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-6.jpg"
+                    alt="Cleaned White Sesame Seeds & Sesame Oil Feedstock"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    Cold-Press Grade
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>Sesame Seeds &amp; Oil</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Sorted Grade</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Sorted White Sesame &amp; Oil Supply
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Cleaned white sesame seeds and bulk sesame oil supply for edible oil brands, food processors, and private-label packers.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('Sesame Seeds & Oil — Sorted White Sesame & Oil Supply')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Sesame Oil Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Product 7: ./product-7.jpg -->
+            <article
+              data-category="De-Oiled Cakes"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-7.jpg"
+                    alt="Groundnut & Oilseed De-Oiled Cake Flakes"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    High-Protein Feed
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>De-Oiled Cakes</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Feed Grade Cake</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Expeller De-Oiled Cake (Bulk Feed Grade)
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Golden-brown expeller-pressed oil cake slabs and flakes for compound cattle feed mills, poultry feed, and bulk agro-traders.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('De-Oiled Cakes — Expeller De-Oiled Cake (Bulk Feed Grade)')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Feed Cake Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Product 8: ./product-8.jpg -->
+            <article
+              data-category="Yellow Mustard"
+              class="catalog-card group bg-[#FFFDF9] border border-[#E8E2D8] rounded-2xl p-4 shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all duration-300 flex flex-col justify-between w-[280px] sm:w-[320px] min-w-[280px] sm:min-w-[320px] shrink-0"
+            >
+              <div>
+                <div class="aspect-square w-full rounded-xl overflow-hidden bg-[#FAF7F2] relative border border-[#E8E2D8]/60">
+                  <img
+                    src="./product-8.jpg"
+                    alt="Yellow Mustard Seeds (Primary Feedstock for Yellow Mustard Oil)"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span class="absolute top-2.5 right-2.5 px-2.5 py-1 text-[10px] font-semibold tracking-wide rounded-full bg-[#7F5539]/10 text-[#7F5539] border border-[#7F5539]/20 backdrop-blur-sm shadow-sm">
+                    Flagship Bestseller
+                  </span>
+                </div>
+                <div class="mt-4">
+                  <div class="flex items-center gap-2 text-xs text-[#7F5539] font-medium">
+                    <span>Yellow Mustard</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Flagship Seed &amp; Oil Line</span>
+                  </div>
+                  <h3 class="mt-1 font-display text-base font-bold text-[#1C2826] leading-snug">
+                    Yellow Mustard Seeds &amp; Bulk Oil Line
+                  </h3>
+                  <p class="mt-1.5 text-xs text-[#2D3F3B] leading-relaxed">
+                    Cleaned yellow mustard seeds and our flagship bulk-manufactured Pure Yellow Mustard Oil for FMCG and private-label brands.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E8E2D8]/80">
+                <a
+                  href="#quote-form"
+                  onclick="selectProductForQuote('Yellow Mustard — Yellow Mustard Seeds & Bulk Oil')"
+                  class="bg-[#7F5539]/10 text-[#7F5539] hover:bg-[#D48B38] hover:text-white border border-[#7F5539]/20 hover:border-[#D48B38] font-medium text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Yellow Mustard Specs</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 4: MANUFACTURING FACILITIES (#facilities)
+           Deep Botanical Pine Section showcasing the 2 real factory videos
+           (./facility-1.mp4 and ./facility-2.mp4 in <video controls muted loop playsinline>)
+      ====================================================================== -->
+      <section id="facilities" class="py-20 lg:py-28 bg-[#1C2826] text-white border-b border-[#E9C46A]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-[#E9C46A]">
+              <span>VERIFIED MILL INFRASTRUCTURE</span>
+              <span aria-hidden="true">·</span>
+              <span>ON-GROUND OPERATIONS</span>
+            </div>
+            <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-balance text-white">
+              Manufacturing Facilities &amp; Mill Operations
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-[#E8E2D8] leading-relaxed">
+              Procurement teams and quality auditors can inspect our active expeller pressing floor, raw seed storage, and bulk bagging operations directly through unedited facility walkthrough footage below.
+            </p>
+          </div>
+
+          <!-- Split 2-Column Video Verification Showcase -->
+          <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <!-- Facility Video 1 -->
+            <div class="rounded-2xl bg-[#141F1D] border border-[#E9C46A]/20 overflow-hidden flex flex-col justify-between shadow-xl">
+              <div class="aspect-video w-full bg-black relative">
+                <video
+                  id="facility-video-1"
+                  src="./facility-1.mp4"
+                  controls
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                ></video>
+              </div>
+              <div class="p-6 sm:p-7">
+                <div class="flex items-center gap-2 text-xs font-mono text-[#E9C46A]">
+                  <span>FACILITY WALKTHROUGH 01</span>
+                  <span aria-hidden="true">·</span>
+                  <span>EXPELLER PRESSING &amp; CAKE HANDLING</span>
+                </div>
+                <h3 class="mt-2 font-display text-xl font-bold text-white">
+                  Oil Expeller Pressing &amp; Processing Floor
+                </h3>
+                <p class="mt-2 text-sm text-[#E8E2D8] leading-relaxed">
+                  Live view of our mechanical oil pressing units, seed hoppers, de-oiled cake collection area, and bulk container filling stations inside Prime Fresh Oil Mills.
+                </p>
+              </div>
+            </div>
+
+            <!-- Facility Video 2 -->
+            <div class="rounded-2xl bg-[#141F1D] border border-[#E9C46A]/20 overflow-hidden flex flex-col justify-between shadow-xl">
+              <div class="aspect-video w-full bg-black relative">
+                <video
+                  id="facility-video-2"
+                  src="./facility-2.mp4"
+                  controls
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                ></video>
+              </div>
+              <div class="p-6 sm:p-7">
+                <div class="flex items-center gap-2 text-xs font-mono text-[#E9C46A]">
+                  <span>FACILITY WALKTHROUGH 02</span>
+                  <span aria-hidden="true">·</span>
+                  <span>BULK SACK STORAGE &amp; MILL LINE</span>
+                </div>
+                <h3 class="mt-2 font-display text-xl font-bold text-white">
+                  Raw Material Warehousing &amp; Multi-Expeller Line
+                </h3>
+                <p class="mt-2 text-sm text-[#E8E2D8] leading-relaxed">
+                  High-bay stacked jute and HDPE seed bags alongside active expeller machinery ensuring uninterrupted bulk batch processing for B2B orders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 5: BULK PROCUREMENT WORKFLOW & PACKAGING OPTIONS (#bulk-process)
+           4-Step Horizontal B2B Supply Chain Roadmap + Interactive Bulk Inquiry Checklist
+      ====================================================================== -->
+      <section id="bulk-process" class="py-20 lg:py-28 bg-[#FAF7F2] border-b border-[#E8E2D8]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#7F5539]">
+              <span>B2B SUPPLY CHAIN ROADMAP</span>
+              <span aria-hidden="true">·</span>
+              <span>PROCUREMENT WORKFLOW</span>
+            </div>
+            <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-[#1C2826] tracking-tight">
+              Bulk Procurement Workflow &amp; Packaging Options
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-[#2D3F3B] leading-relaxed">
+              Structured from initial specification alignment to final factory dispatch for FMCG procurement managers, wholesale oil distributors, and agro-commodity buyers.
+            </p>
+          </div>
+
+          <!-- 4-Step Horizontal B2B Supply Chain Roadmap with Circular Accent Badges & Connector Lines -->
+          <div class="mt-12 relative">
+            <!-- Subtle connector line on desktop -->
+            <div class="hidden lg:block absolute top-7 left-12 right-12 h-0.5 bg-gradient-to-r from-[#D48B38] via-[#E9C46A] to-[#D48B38] z-0" aria-hidden="true"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+              <!-- Step 1 -->
+              <div class="p-6 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:border-[#D48B38] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="h-10 w-10 rounded-full bg-[#D48B38] text-white font-display font-bold text-sm flex items-center justify-center shadow-md ring-4 ring-[#FAF7F2] shrink-0">
+                      01
+                    </div>
+                    <span class="text-[11px] font-mono font-semibold tracking-wider text-[#7F5539]">SPECIFICATION</span>
+                  </div>
+                  <h3 class="mt-4 font-display text-base font-bold text-[#1C2826]">
+                    1. Requirement &amp; Spec Alignment
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Share your target product category (Yellow Mustard Oil, Groundnut Seeds, Sesame Seeds &amp; Oil, or De-Oiled Cakes), packaging format, and schedule.
+                  </p>
+                </div>
+                <div class="mt-5 pt-4 border-t border-[#E8E2D8] text-xs text-[#2D3F3B]/80 font-medium">
+                  Direct review by mill procurement desk
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="p-6 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:border-[#D48B38] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="h-10 w-10 rounded-full bg-[#D48B38] text-white font-display font-bold text-sm flex items-center justify-center shadow-md ring-4 ring-[#FAF7F2] shrink-0">
+                      02
+                    </div>
+                    <span class="text-[11px] font-mono font-semibold tracking-wider text-[#7F5539]">VERIFICATION</span>
+                  </div>
+                  <h3 class="mt-4 font-display text-base font-bold text-[#1C2826]">
+                    2. Quality Assessment
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Evaluate raw seed selection, expeller pressing parameters, and physical sample lots so your QA team can verify grade consistency before bulk commitment.
+                  </p>
+                </div>
+                <div class="mt-5 pt-4 border-t border-[#E8E2D8] text-xs text-[#2D3F3B]/80 font-medium">
+                  Batch-level transparency &amp; inspection
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="p-6 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:border-[#D48B38] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="h-10 w-10 rounded-full bg-[#D48B38] text-white font-display font-bold text-sm flex items-center justify-center shadow-md ring-4 ring-[#FAF7F2] shrink-0">
+                      03
+                    </div>
+                    <span class="text-[11px] font-mono font-semibold tracking-wider text-[#7F5539]">PRODUCTION</span>
+                  </div>
+                  <h3 class="mt-4 font-display text-base font-bold text-[#1C2826]">
+                    3. Bulk Milling &amp; Processing
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Dedicated milling, seed cleaning, and oil pressing runs executed at Prime Fresh Oil Mills with hygienically handled bulk storage and container filling.
+                  </p>
+                </div>
+                <div class="mt-5 pt-4 border-t border-[#E8E2D8] text-xs text-[#2D3F3B]/80 font-medium">
+                  Fresh commercial batch scheduling
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="p-6 rounded-xl bg-[#FFFDF9] border border-[#E8E2D8] shadow-[0_4px_20px_rgba(28,40,38,0.06)] hover:border-[#D48B38] hover:shadow-[0_8px_30px_rgba(28,40,38,0.12)] transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="h-10 w-10 rounded-full bg-[#D48B38] text-white font-display font-bold text-sm flex items-center justify-center shadow-md ring-4 ring-[#FAF7F2] shrink-0">
+                      04
+                    </div>
+                    <span class="text-[11px] font-mono font-semibold tracking-wider text-[#7F5539]">LOGISTICS</span>
+                  </div>
+                  <h3 class="mt-4 font-display text-base font-bold text-[#1C2826]">
+                    4. Dispatch Coordination
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm text-[#2D3F3B] leading-relaxed">
+                    Coordinated loading for bulk oil containers, drums, tins, or stacked bags for seeds and de-oiled cakes with prompt transport documentation.
+                  </p>
+                </div>
+                <div class="mt-5 pt-4 border-t border-[#E8E2D8] text-xs text-[#2D3F3B]/80 font-medium">
+                  End-to-end mill dispatch support
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Bulk Inquiry Checklist Helper for B2B Procurement Managers -->
+          <div class="mt-12 rounded-2xl bg-[#FFFDF9] border border-[#E8E2D8] p-6 sm:p-8 lg:p-10 shadow-[0_4px_20px_rgba(28,40,38,0.06)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-5">
+                <p class="text-xs font-mono font-semibold text-[#7F5539]">
+                  INTERACTIVE PROCUREMENT HELPER
+                </p>
+                <h3 class="mt-1.5 font-display text-2xl font-bold text-[#1C2826]">
+                  Bulk Inquiry Checklist for Procurement Managers
+                </h3>
+                <p class="mt-2 text-sm text-[#2D3F3B] leading-relaxed">
+                  Select the commercial requirements that apply to your company. Checked items are automatically added to your <span class="font-semibold text-[#1C2826]">Request a Quote</span> specification notes below.
+                </p>
+                <div class="mt-4 text-xs font-mono text-[#2D3F3B]">
+                  Selected specifications: <span id="checklist-count" class="font-bold text-[#D48B38] tabular-nums">0</span> items synced to quote form
+                </div>
+              </div>
+
+              <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] cursor-pointer hover:border-[#D48B38] transition-colors">
+                  <input
+                    type="checkbox"
+                    value="Bulk Liquid Oil (Drums / Tins / Tanker)"
+                    onchange="handleChecklistToggle(this)"
+                    class="mt-0.5 h-4 w-4 rounded border-[#E8E2D8] text-[#D48B38] focus:ring-[#D48B38]"
+                  />
+                  <span class="text-xs sm:text-sm font-medium text-[#1C2826]">
+                    Bulk Liquid Oil (Drums / Tins / Tanker)
+                  </span>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] cursor-pointer hover:border-[#D48B38] transition-colors">
+                  <input
+                    type="checkbox"
+                    value="Private-Label / Brand Bottling Supply"
+                    onchange="handleChecklistToggle(this)"
+                    class="mt-0.5 h-4 w-4 rounded border-[#E8E2D8] text-[#D48B38] focus:ring-[#D48B38]"
+                  />
+                  <span class="text-xs sm:text-sm font-medium text-[#1C2826]">
+                    Private-Label / Brand Bottling Supply
+                  </span>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] cursor-pointer hover:border-[#D48B38] transition-colors">
+                  <input
+                    type="checkbox"
+                    value="Cleaned Oilseeds in Jute / HDPE Sacks"
+                    onchange="handleChecklistToggle(this)"
+                    class="mt-0.5 h-4 w-4 rounded border-[#E8E2D8] text-[#D48B38] focus:ring-[#D48B38]"
+                  />
+                  <span class="text-xs sm:text-sm font-medium text-[#1C2826]">
+                    Cleaned Oilseeds in Jute / HDPE Sacks
+                  </span>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] cursor-pointer hover:border-[#D48B38] transition-colors">
+                  <input
+                    type="checkbox"
+                    value="De-Oiled Cake Bulk Dispatch for Feed Mills"
+                    onchange="handleChecklistToggle(this)"
+                    class="mt-0.5 h-4 w-4 rounded border-[#E8E2D8] text-[#D48B38] focus:ring-[#D48B38]"
+                  />
+                  <span class="text-xs sm:text-sm font-medium text-[#1C2826]">
+                    De-Oiled Cake Bulk Dispatch for Feed Mills
+                  </span>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] cursor-pointer hover:border-[#D48B38] transition-colors">
+                  <input
+                    type="checkbox"
+                    value="Pre-Dispatch Quality Sample Request"
+                    onchange="handleChecklistToggle(this)"
+                    class="mt-0.5 h-4 w-4 rounded border-[#E8E2D8] text-[#D48B38] focus:ring-[#D48B38]"
+                  />
+                  <span class="text-xs sm:text-sm font-medium text-[#1C2826]">
+                    Pre-Dispatch Quality Sample Request
+                  </span>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8] cursor-pointer hover:border-[#D48B38] transition-colors">
+                  <input
+                    type="checkbox"
+                    value="Recurring Monthly Contract Schedule"
+                    onchange="handleChecklistToggle(this)"
+                    class="mt-0.5 h-4 w-4 rounded border-[#E8E2D8] text-[#D48B38] focus:ring-[#D48B38]"
+                  />
+                  <span class="text-xs sm:text-sm font-medium text-[#1C2826]">
+                    Recurring Monthly Contract Schedule
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 6: REQUEST A QUOTE FORM (#quote-form)
+           Liquid Glassmorphism layout inspired by modern Apple-style UI with glowing orbs
+      ====================================================================== -->
+      <section id="quote-form" class="relative overflow-hidden py-20 lg:py-28 bg-[#0F172A] border-b border-slate-800">
+        <!-- Liquid Gradient Orbs for Apple-style ambient refractive lighting -->
+        <div class="pointer-events-none absolute -top-24 -left-24 w-96 sm:w-[32rem] h-96 sm:h-[32rem] rounded-full bg-amber-500/25 blur-[120px] animate-liquid-blob-1" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -bottom-24 -right-24 w-96 sm:w-[36rem] h-96 sm:h-[36rem] rounded-full bg-emerald-600/20 blur-[130px] animate-liquid-blob-2" aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+            <!-- Left Column: B2B Direct Contact Context in Liquid Glass (5 cols) -->
+            <div class="lg:col-span-5 bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] shadow-inner shadow-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-amber-400 font-mono">
+                  <span>B2B QUOTATION DESK</span>
+                  <span aria-hidden="true">·</span>
+                  <span>DIRECT FACTORY INQUIRY</span>
+                </div>
+                <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold text-white tracking-tight text-balance">
+                  Request a Bulk Supply Quote
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                  Submit your commercial requirements for Pure Yellow Mustard Oil, Groundnut Seeds, Sesame Seeds &amp; Oil, or De-Oiled Cakes. Our procurement desk responds promptly with dispatch terms.
+                </p>
+              </div>
+
+              <div class="mt-8 space-y-4 p-5 sm:p-6 rounded-2xl bg-black/20 border border-white/10 shadow-inner">
+                <div>
+                  <p class="text-xs font-mono text-amber-400">COMPANY</p>
+                  <p class="mt-0.5 font-display text-base font-bold text-white">Prime Fresh Oil Mills</p>
+                </div>
+                <div class="pt-3 border-t border-white/10">
+                  <p class="text-xs font-mono text-amber-400">DIRECT PROCUREMENT PHONE / WHATSAPP</p>
+                  <a href="tel:+919057292529" class="mt-0.5 inline-block font-mono text-base font-bold text-amber-300 hover:text-amber-200 hover:underline tabular-nums">
+                    +91 90572 92529
+                  </a>
+                </div>
+                <div class="pt-3 border-t border-white/10">
+                  <p class="text-xs font-mono text-amber-400">OFFICIAL B2B EMAIL</p>
+                  <a href="mailto:Puneet2garg@gmail.com" class="mt-0.5 inline-block text-sm font-semibold text-slate-200 hover:text-white hover:underline">
+                    Puneet2garg@gmail.com
+                  </a>
+                </div>
+                <div class="pt-3 border-t border-white/10">
+                  <p class="text-xs font-mono text-amber-400">FACTORY LOCATION</p>
+                  <p class="mt-1 text-xs text-slate-300">
+                    [Factory Address Placeholder — Official Address To Be Confirmed]
+                  </p>
+                </div>
+                <div class="pt-3 border-t border-white/10">
+                  <p class="text-xs font-mono text-amber-400">CORE BESTSELLERS</p>
+                  <p class="mt-1 text-xs sm:text-sm text-slate-300">
+                    Yellow mustard oil · Groundnut seeds · Sesame seeds &amp; oil · De-oiled cakes
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive B2B Form & Confirmation State in Liquid Glass (7 cols) -->
+            <div class="lg:col-span-7 bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] shadow-inner shadow-white/10 rounded-3xl p-6 sm:p-8 lg:p-10">
+              <form id="b2b-quote-form" novalidate class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <!-- Company Name -->
+                  <div>
+                    <label for="company-name" class="block text-xs font-semibold text-slate-200 mb-1.5">
+                      Company Name <span class="text-amber-400">*</span>
+                    </label>
+                    <input
+                      id="company-name"
+                      name="companyName"
+                      type="text"
+                      required
+                      placeholder="e.g., Sunrise Edible Oils Pvt. Ltd."
+                      class="w-full px-3.5 py-3 text-sm rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:bg-black/40 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
+                    />
+                    <p id="err-companyName" class="hidden mt-1.5 text-xs text-rose-400 font-medium"></p>
+                  </div>
+
+                  <!-- Contact Name -->
+                  <div>
+                    <label for="contact-name" class="block text-xs font-semibold text-slate-200 mb-1.5">
+                      Contact Name <span class="text-amber-400">*</span>
+                    </label>
+                    <input
+                      id="contact-name"
+                      name="contactName"
+                      type="text"
+                      required
+                      placeholder="e.g., Rajesh Sharma (Procurement Head)"
+                      class="w-full px-3.5 py-3 text-sm rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:bg-black/40 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
+                    />
+                    <p id="err-contactName" class="hidden mt-1.5 text-xs text-rose-400 font-medium"></p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <!-- Email -->
+                  <div>
+                    <label for="contact-email" class="block text-xs font-semibold text-slate-200 mb-1.5">
+                      Business Email <span class="text-amber-400">*</span>
+                    </label>
+                    <input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="procurement@company.com"
+                      class="w-full px-3.5 py-3 text-sm rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:bg-black/40 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
+                    />
+                    <p id="err-email" class="hidden mt-1.5 text-xs text-rose-400 font-medium"></p>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div>
+                    <label for="contact-phone" class="block text-xs font-semibold text-slate-200 mb-1.5">
+                      Phone / WhatsApp Number <span class="text-amber-400">*</span>
+                    </label>
+                    <input
+                      id="contact-phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder="+91 98765 43210"
+                      class="w-full px-3.5 py-3 text-sm rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:bg-black/40 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
+                    />
+                    <p id="err-phone" class="hidden mt-1.5 text-xs text-rose-400 font-medium"></p>
+                  </div>
+                </div>
+
+                <!-- Product Category Dropdown -->
+                <div>
+                  <label for="product-category" class="block text-xs font-semibold text-slate-200 mb-1.5">
+                    Product Category <span class="text-amber-400">*</span>
+                  </label>
+                  <select
+                    id="product-category"
+                    name="productCategory"
+                    required
+                    class="w-full px-3.5 py-3 text-sm rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:bg-black/40 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
+                  >
+                    <option value="" class="bg-[#0F172A] text-white">Select Product Category for Bulk Inquiry...</option>
+                    <option value="Yellow Mustard Oil (Bulk)" class="bg-[#0F172A] text-white">Yellow Mustard Oil (Flagship Bulk Supply)</option>
+                    <option value="Yellow Mustard — Whole Mustard Seeds (Milling Grade)" class="bg-[#0F172A] text-white">Yellow Mustard — Whole Mustard Seeds (Milling Grade)</option>
+                    <option value="Yellow Mustard — Yellow Mustard Seeds & Bulk Oil" class="bg-[#0F172A] text-white">Yellow Mustard — Yellow Mustard Seeds &amp; Bulk Oil</option>
+                    <option value="Groundnut Seeds — Shelled Groundnut Kernels" class="bg-[#0F172A] text-white">Groundnut Seeds — Shelled Groundnut Kernels</option>
+                    <option value="Sesame Seeds & Oil — Natural Black Sesame Seeds" class="bg-[#0F172A] text-white">Sesame Seeds &amp; Oil — Natural Black Sesame Seeds</option>
+                    <option value="Sesame Seeds & Oil — Natural White Sesame Seeds (Bulk)" class="bg-[#0F172A] text-white">Sesame Seeds &amp; Oil — Natural White Sesame Seeds (Bulk)</option>
+                    <option value="Sesame Seeds & Oil — Sorted White Sesame & Oil Supply" class="bg-[#0F172A] text-white">Sesame Seeds &amp; Oil — Sorted White Sesame &amp; Oil Supply</option>
+                    <option value="De-Oiled Cakes — Mustard Oil Cake (Pressed Flakes)" class="bg-[#0F172A] text-white">De-Oiled Cakes — Mustard Oil Cake (Pressed Flakes)</option>
+                    <option value="De-Oiled Cakes — Expeller De-Oiled Cake (Bulk Feed Grade)" class="bg-[#0F172A] text-white">De-Oiled Cakes — Expeller De-Oiled Cake (Bulk Feed Grade)</option>
+                    <option value="Multi-Commodity B2B Contract Inquiry" class="bg-[#0F172A] text-white">Multi-Commodity B2B Contract Inquiry</option>
+                  </select>
+                  <p id="err-productCategory" class="hidden mt-1.5 text-xs text-rose-400 font-medium"></p>
+                </div>
+
+                <!-- Clickable Single-Select Pill Group for Quick Estimated Quantities -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-200 mb-2">
+                    Estimated Quantity / Lot Size
+                  </label>
+                  <div class="flex flex-wrap items-center gap-2" role="radiogroup" aria-label="Estimated Quantity">
+                    <button
+                      type="button"
+                      class="quantity-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all cursor-pointer"
+                      data-quantity="1 – 5 Tons"
+                      onclick="selectQuantityPill(this)"
+                    >
+                      1 – 5 Tons
+                    </button>
+                    <button
+                      type="button"
+                      class="quantity-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all cursor-pointer"
+                      data-quantity="5 – 20 Tons"
+                      onclick="selectQuantityPill(this)"
+                    >
+                      5 – 20 Tons
+                    </button>
+                    <button
+                      type="button"
+                      class="quantity-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all cursor-pointer"
+                      data-quantity="Full Tanker Load"
+                      onclick="selectQuantityPill(this)"
+                    >
+                      Full Tanker Load
+                    </button>
+                    <button
+                      type="button"
+                      class="quantity-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all cursor-pointer"
+                      data-quantity="Custom Requirement"
+                      onclick="selectQuantityPill(this)"
+                    >
+                      Custom Requirement
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Packaging / Bulk Requirement Notes -->
+                <div>
+                  <label for="requirement-notes" class="block text-xs font-semibold text-slate-200 mb-1.5">
+                    Packaging / Bulk Requirement Notes
+                  </label>
+                  <textarea
+                    id="requirement-notes"
+                    name="notes"
+                    rows="4"
+                    placeholder="Specify packaging format (bulk drums, tins, jute/HDPE bags), destination city, or private-label requirements..."
+                    class="w-full px-3.5 py-3 text-sm rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:bg-black/40 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-2">
+                  <button
+                    type="submit"
+                    id="submit-quote-btn"
+                    class="w-full py-3.5 px-6 rounded-xl text-sm font-bold text-slate-900 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all cursor-pointer"
+                  >
+                    Submit Bulk Quote Inquiry
+                  </button>
+                </div>
+              </form>
+
+              <!-- LIQUID GLASS CONFIRMATION STATE (Shown on Submit without page reload) -->
+              <div
+                id="quote-confirmation"
+                role="status"
+                aria-live="polite"
+                class="hidden rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 p-6 sm:p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] shadow-inner shadow-white/10 text-white"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-mono text-emerald-400">B2B INQUIRY REGISTERED</p>
+                    <h3 class="font-display text-xl font-bold text-white">
+                      Bulk Quotation Request Received
+                    </h3>
+                  </div>
+                </div>
+
+                <p id="confirmation-summary" class="mt-4 text-sm text-slate-200 leading-relaxed"></p>
+
+                <div class="mt-6 pt-6 border-t border-white/15 flex flex-wrap items-center gap-4">
+                  <a
+                    id="whatsapp-followup-link"
+                    href="https://wa.me/919057292529"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-slate-900 bg-amber-500 hover:bg-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all whitespace-nowrap"
+                  >
+                    <span>WhatsApp Instant Follow-up (+91 90572 92529)</span>
+                  </a>
+                  <button
+                    type="button"
+                    onclick="resetQuoteForm()"
+                    class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 border border-white/20 hover:bg-white/10 transition-colors whitespace-nowrap cursor-pointer"
+                  >
+                    Submit Another Inquiry
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         FOOTER & CONTACT INFO
+         Deep Botanical Pine (#141F1D / #1C2826) with exact company contact details.
+    ====================================================================== -->
+    <footer class="bg-[#141F1D] text-[#E8E2D8] py-16 border-t border-[#1C2826]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#1C2826]">
+          <!-- Brand & Description (4 cols) -->
+          <div class="lg:col-span-4">
+            <div class="flex items-center gap-3">
+              <img
+                src="./logo.png"
+                alt="Prime Fresh Oil Mills"
+                referrerpolicy="no-referrer"
+                class="h-10 w-10 rounded-full bg-white/10 p-1 object-contain shrink-0"
+                onerror="this.style.display='none';"
+              />
+              <span class="font-display text-lg font-bold text-white">
+                Prime Fresh Oil Mills
+              </span>
+            </div>
+            <p class="mt-4 text-sm text-[#E8E2D8]/80 leading-relaxed">
+              B2B manufacturer and bulk supplier of Pure Yellow Mustard Oil, Groundnut Seeds, Sesame Seeds &amp; Oil, and De-Oiled Cakes for FMCG, edible oil brands, and private-label partners.
+            </p>
+          </div>
+
+          <!-- Bestsellers Stated (4 cols) -->
+          <div class="lg:col-span-4">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#E9C46A]">
+              Bestsellers &amp; Core B2B Lines
+            </h3>
+            <ul class="mt-4 space-y-2.5 text-sm text-[#E8E2D8]">
+              <li>
+                <a href="#hero-product" class="hover:text-[#E9C46A] transition-colors">Yellow mustard oil (Flagship Hero Product)</a>
+              </li>
+              <li>
+                <a href="#catalog" onclick="filterCatalog('Groundnut Seeds')" class="hover:text-[#E9C46A] transition-colors">Groundnut seeds</a>
+              </li>
+              <li>
+                <a href="#catalog" onclick="filterCatalog('Sesame Seeds & Oil')" class="hover:text-[#E9C46A] transition-colors">Sesame seeds &amp; oil</a>
+              </li>
+              <li>
+                <a href="#catalog" onclick="filterCatalog('De-Oiled Cakes')" class="hover:text-[#E9C46A] transition-colors">De-oiled cakes</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Official Contact & Address (4 cols) -->
+          <div class="lg:col-span-4">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#E9C46A]">
+              Direct B2B Contact &amp; Mill Address
+            </h3>
+            <dl class="mt-4 space-y-3 text-sm">
+              <div>
+                <dt class="text-xs text-[#E8E2D8]/70">Phone / WhatsApp:</dt>
+                <dd class="font-mono font-semibold text-white tabular-nums">
+                  <a href="tel:+919057292529" class="hover:text-[#E9C46A] transition-colors">+91 90572 92529</a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-xs text-[#E8E2D8]/70">Email:</dt>
+                <dd class="font-semibold text-white">
+                  <a href="mailto:Puneet2garg@gmail.com" class="hover:text-[#E9C46A] transition-colors">Puneet2garg@gmail.com</a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-xs text-[#E8E2D8]/70">Factory Address:</dt>
+                <dd class="text-[#E8E2D8]/90">
+                  [Factory Address Placeholder — Official Address To Be Confirmed]
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#E8E2D8]/70">
+          <p>© <span id="footer-year">2026</span> Prime Fresh Oil Mills. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <a href="#story-scroll" class="hover:text-white transition-colors">Scroll Story</a>
+            <a href="#hero-product" class="hover:text-white transition-colors">Hero Oil</a>
+            <a href="#catalog" class="hover:text-white transition-colors">Catalog</a>
+            <a href="#facilities" class="hover:text-white transition-colors">Facilities</a>
+            <a href="#quote-form" class="hover:text-white transition-colors">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================================
+         JAVASCRIPT ENGINE:
+         1. Auto-Frame Extraction directly from ./story.mp4 (120 frames across duration
+            into offscreen buffers) + GSAP ScrollTrigger (scrub: 1.2) + smooth lerp.
+         2. 25/75 Split scroll overlays in left column (0%-35%, 35%-70%, 70%-100%).
+         3. Vibrant full-brightness cover math drawing on framed #scroll-canvas.
+         4. Swiper.js 3D Coverflow carousel for core categories.
+         5. Opposing Scroll Parallax Catalog: .catalog-row-1 moves right, .catalog-row-2 moves left.
+         6. Category Filter, Quote Pre-fill, Checklist Sync & Validation.
+    ====================================================================== -->
+    <script>
+      (function () {
+        const TOTAL_FRAMES = 120;
+        const frameBuffers = new Array(TOTAL_FRAMES).fill(null);
+        let currentFrameIndex = 0;
+        let extractionRunId = 0;
+
+        const canvas = document.getElementById('scroll-canvas');
+        const ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
+        const sourceVideo = document.getElementById('source-video');
+        const statusBox = document.getElementById('extraction-status');
+        const statusText = document.getElementById('extraction-status-text');
+        const progressReadout = document.getElementById('scroll-progress-readout');
+
+        const overlay1 = document.getElementById('story-overlay-1');
+        const overlay2 = document.getElementById('story-overlay-2');
+        const overlay3 = document.getElementById('story-overlay-3');
+
+        /**
+         * Object-fit: cover math to draw offscreen buffer onto #scroll-canvas at 100% brightness & saturation
+         */
+        function drawFrameCover(source) {
+          if (!canvas || !ctx || !source) return;
+          const cw = canvas.width;
+          const ch = canvas.height;
+          const sw = source.width || source.videoWidth || 1280;
+          const sh = source.height || source.videoHeight || 720;
+          if (cw <= 0 || ch <= 0 || sw <= 0 || sh <= 0) return;
+
+          const scale = Math.max(cw / sw, ch / sh);
+          const drawWidth = sw * scale;
+          const drawHeight = sh * scale;
+          const offsetX = (cw - drawWidth) / 2;
+          const offsetY = (ch - drawHeight) / 2;
+
+          ctx.clearRect(0, 0, cw, ch);
+          ctx.drawImage(source, offsetX, offsetY, drawWidth, drawHeight);
+        }
+
+        /**
+         * Vibrant warm fallback procedural frame renderer
+         */
+        function drawProceduralFallback(frameIdx) {
+          if (!canvas || !ctx) return;
+          const cw = canvas.width;
+          const ch = canvas.height;
+          const progress = frameIdx / (TOTAL_FRAMES - 1);
+
+          const grad = ctx.createLinearGradient(0, 0, cw, ch);
+          grad.addColorStop(0, '#FAF7F2');
+          grad.addColorStop(0.5, '#FFFDF9');
+          grad.addColorStop(1, '#FEF3C7');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, cw, ch);
+
+          ctx.save();
+          ctx.strokeStyle = 'rgba(212, 139, 56, 0.35)';
+          ctx.lineWidth = 2;
+          const centerX = cw * 0.5;
+          const centerY = ch * (0.35 + progress * 0.25);
+          for (let r = 40; r <= 280; r += 40) {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, r + (progress * 35), 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          ctx.restore();
+        }
+
+        /**
+         * Render nearest available extracted frame from frameBuffers[]
+         */
+        function renderFrame(index) {
+          const clampedIndex = Math.max(0, Math.min(TOTAL_FRAMES - 1, index));
+          currentFrameIndex = clampedIndex;
+
+          if (progressReadout) {
+            const padded = String(clampedIndex + 1).padStart(3, '0');
+            progressReadout.textContent = 'FRAME ' + padded + ' / ' + TOTAL_FRAMES;
+          }
+
+          let targetBuffer = frameBuffers[clampedIndex];
+          if (!targetBuffer) {
+            for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
+              if (clampedIndex - offset >= 0 && frameBuffers[clampedIndex - offset]) {
+                targetBuffer = frameBuffers[clampedIndex - offset];
+                break;
+              }
+              if (clampedIndex + offset < TOTAL_FRAMES && frameBuffers[clampedIndex + offset]) {
+                targetBuffer = frameBuffers[clampedIndex + offset];
+                break;
+              }
+            }
+          }
+
+          if (targetBuffer) {
+            drawFrameCover(targetBuffer);
+          } else if (sourceVideo && sourceVideo.readyState >= 2) {
+            drawFrameCover(sourceVideo);
+          } else {
+            drawProceduralFallback(clampedIndex);
+          }
+        }
+
+        /**
+         * Resize canvas to match framed container dimensions & device pixel ratio
+         */
+        function resizeCanvas() {
+          if (!canvas) return;
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          const container = canvas.parentElement;
+          const w = container ? container.clientWidth : window.innerWidth;
+          const h = container ? container.clientHeight : window.innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          renderFrame(currentFrameIndex);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        /**
+         * Update the 3 B2B text overlays in the left 25% column based on scroll progress:
+         * - 0%–35%: Overlay 1
+         * - 35%–70%: Overlay 2
+         * - 70%–100%: Overlay 3
+         */
+        function updateStoryOverlays(progress) {
+          const p = Math.max(0, Math.min(1, progress));
+          const activeStage = p < 0.35 ? 1 : p < 0.70 ? 2 : 3;
+
+          const stages = [
+            { el: overlay1, stage: 1 },
+            { el: overlay2, stage: 2 },
+            { el: overlay3, stage: 3 },
+          ];
+
+          stages.forEach(function (item) {
+            if (!item.el) return;
+            if (item.stage === activeStage) {
+              item.el.style.opacity = '1';
+              item.el.style.transform = 'translateY(0px)';
+              item.el.classList.remove('pointer-events-none');
+            } else {
+              item.el.style.opacity = '0';
+              item.el.style.transform = 'translateY(20px)';
+              item.el.classList.add('pointer-events-none');
+            }
+          });
+        }
+
+        /**
+         * Smooth Interpolation (lerp) inside a requestAnimationFrame loop
+         */
+        let targetProgress = 0;
+        let smoothedProgress = 0;
+        const LERP_FACTOR = 0.12;
+
+        function lerpLoop() {
+          const diff = targetProgress - smoothedProgress;
+          if (Math.abs(diff) > 0.0001) {
+            smoothedProgress += diff * LERP_FACTOR;
+          } else {
+            smoothedProgress = targetProgress;
+          }
+
+          const frameIdx = Math.min(
+            TOTAL_FRAMES - 1,
+            Math.max(0, Math.floor(smoothedProgress * (TOTAL_FRAMES - 1)))
+          );
+
+          if (frameIdx !== currentFrameIndex) {
+            renderFrame(frameIdx);
+          }
+          updateStoryOverlays(smoothedProgress);
+
+          requestAnimationFrame(lerpLoop);
+        }
+
+        requestAnimationFrame(lerpLoop);
+
+        /**
+         * Initialize GSAP ScrollTrigger (scrub: 1.2 for momentum/inertia)
+         */
+        function initScrollTrigger() {
+          if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+          gsap.registerPlugin(ScrollTrigger);
+
+          ScrollTrigger.create({
+            trigger: '#story-scroll',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1.2,
+            onUpdate: function (self) {
+              targetProgress = Math.max(0, Math.min(1, self.progress));
+            },
+          });
+        }
+
+        initScrollTrigger();
+
+        /**
+         * Auto-Frame Extraction Routine directly from ./story.mp4
+         */
+        async function extractAllFramesFromVideo(videoUrl) {
+          const runId = ++extractionRunId;
+
+          for (let i = 0; i < TOTAL_FRAMES; i++) {
+            if (frameBuffers[i] && typeof frameBuffers[i].close === 'function') {
+              try { frameBuffers[i].close(); } catch (e) {}
+            }
+            frameBuffers[i] = null;
+          }
+
+          if (statusBox && statusText) {
+            statusBox.style.opacity = '1';
+            statusBox.classList.remove('hidden');
+            statusText.textContent = 'Buffering 120 scroll frames (0/' + TOTAL_FRAMES + ')...';
+          }
+
+          if (!sourceVideo) return;
+          sourceVideo.src = videoUrl;
+          sourceVideo.load();
+
+          await new Promise(function (resolve) {
+            const checkReady = function () {
+              if (sourceVideo.readyState >= 2 && Number.isFinite(sourceVideo.duration) && sourceVideo.duration > 0) {
+                cleanup();
+                resolve();
+              }
+            };
+            const onError = function () {
+              cleanup();
+              resolve();
+            };
+            const cleanup = function () {
+              sourceVideo.removeEventListener('loadedmetadata', checkReady);
+              sourceVideo.removeEventListener('loadeddata', checkReady);
+              sourceVideo.removeEventListener('canplay', checkReady);
+              sourceVideo.removeEventListener('error', onError);
+            };
+            if (sourceVideo.readyState >= 2 && Number.isFinite(sourceVideo.duration) && sourceVideo.duration > 0) {
+              resolve();
+            } else {
+              sourceVideo.addEventListener('loadedmetadata', checkReady);
+              sourceVideo.addEventListener('loadeddata', checkReady);
+              sourceVideo.addEventListener('canplay', checkReady);
+              sourceVideo.addEventListener('error', onError);
+            }
+          });
+
+          if (runId !== extractionRunId) return;
+
+          const duration = Number.isFinite(sourceVideo.duration) && sourceVideo.duration > 0
+            ? sourceVideo.duration
+            : 10;
+
+          const vw = sourceVideo.videoWidth || 1280;
+          const vh = sourceVideo.videoHeight || 720;
+
+          const scale = Math.min(1, 960 / vw);
+          const targetW = Math.max(1, Math.round(vw * scale));
+          const targetH = Math.max(1, Math.round(vh * scale));
+
+          const offCanvas = document.createElement('canvas');
+          offCanvas.width = targetW;
+          offCanvas.height = targetH;
+          const offCtx = offCanvas.getContext('2d', { alpha: false });
+
+          for (let i = 0; i < TOTAL_FRAMES; i++) {
+            if (runId !== extractionRunId) return;
+
+            const targetTime = Math.min(
+              Math.max(0, duration - 0.04),
+              (i / (TOTAL_FRAMES - 1)) * duration
+            );
+
+            await new Promise(function (resolve) {
+              let settled = false;
+              const finish = function () {
+                if (settled) return;
+                settled = true;
+                sourceVideo.removeEventListener('seeked', onSeeked);
+                resolve();
+              };
+              const onSeeked = function () {
+                clearTimeout(timeoutId);
+                finish();
+              };
+              const timeoutId = setTimeout(finish, 250);
+
+              if (Math.abs(sourceVideo.currentTime - targetTime) < 0.01 && sourceVideo.readyState >= 2) {
+                clearTimeout(timeoutId);
+                finish();
+                return;
+              }
+
+              sourceVideo.addEventListener('seeked', onSeeked, { once: true });
+              try {
+                sourceVideo.currentTime = targetTime;
+              } catch (e) {
+                clearTimeout(timeoutId);
+                finish();
+              }
+            });
+
+            if (runId !== extractionRunId) return;
+
+            try {
+              if (offCtx && sourceVideo.readyState >= 2) {
+                offCtx.drawImage(sourceVideo, 0, 0, targetW, targetH);
+                if (typeof createImageBitmap === 'function') {
+                  frameBuffers[i] = await createImageBitmap(offCanvas);
+                } else {
+                  const cloneCanvas = document.createElement('canvas');
+                  cloneCanvas.width = targetW;
+                  cloneCanvas.height = targetH;
+                  cloneCanvas.getContext('2d', { alpha: false }).drawImage(offCanvas, 0, 0);
+                  frameBuffers[i] = cloneCanvas;
+                }
+              }
+            } catch (err) {}
+
+            if (i === 0 || i === currentFrameIndex) {
+              renderFrame(currentFrameIndex);
+            }
+
+            if (statusText && (i % 12 === 0 || i === TOTAL_FRAMES - 1)) {
+              statusText.textContent = 'Buffered ' + (i + 1) + ' / ' + TOTAL_FRAMES + ' scroll frames';
+            }
+          }
+
+          if (runId === extractionRunId) {
+            renderFrame(currentFrameIndex);
+            if (statusBox) {
+              statusBox.style.opacity = '0';
+              setTimeout(function () {
+                statusBox.classList.add('hidden');
+              }, 350);
+            }
+          }
+        }
+
+        // Directly extract ./story.mp4 automatically on page load
+        extractAllFramesFromVideo('./story.mp4');
+      })();
+
+      /**
+       * Initialize Swiper 3D EffectCoverflow Carousel
+       */
+      function initSwiperCategoryCarousel() {
+        if (typeof Swiper !== 'undefined' && document.querySelector('.core-category-swiper')) {
+          new Swiper('.core-category-swiper', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            coverflowEffect: {
+              rotate: 25,
+              stretch: 0,
+              depth: 250,
+              modifier: 1,
+              slideShadows: false,
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSwiperCategoryCarousel);
+      } else {
+        initSwiperCategoryCarousel();
+      }
+
+      /**
+       * Initialize Opposing Scroll Parallax for #catalog (.catalog-row-1 & .catalog-row-2)
+       */
+      function initCatalogParallax() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        const mm = gsap.matchMedia();
+
+        // Desktop / Tablet (min-width: 768px): Opposing Scroll Parallax
+        mm.add("(min-width: 768px)", function () {
+          // Row 1: moves to the right as user scrolls down
+          gsap.fromTo(
+            '.catalog-row-1',
+            { x: -140 },
+            {
+              x: 140,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '#catalog',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1,
+              },
+            }
+          );
+
+          // Row 2: moves to the left as user scrolls down
+          gsap.fromTo(
+            '.catalog-row-2',
+            { x: 140 },
+            {
+              x: -140,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '#catalog',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1,
+              },
+            }
+          );
+        });
+
+        // Mobile (max-width: 767px): Standard smooth touch overflow scroll (no conflicting GSAP transform)
+        mm.add("(max-width: 767px)", function () {
+          gsap.set(['.catalog-row-1', '.catalog-row-2'], { clearProps: 'all' });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCatalogParallax);
+      } else {
+        initCatalogParallax();
+      }
+
+      /**
+       * Product Catalog Category Filtering across both parallax rows
+       */
+      window.filterCatalog = function (category) {
+        const cards = document.querySelectorAll('.catalog-card');
+        const buttons = document.querySelectorAll('.catalog-filter-btn');
+
+        buttons.forEach(function (btn) {
+          const btnCat = btn.getAttribute('data-filter');
+          if (btnCat === category) {
+            btn.className =
+              'catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 bg-[#1C2826] text-[#E9C46A] shadow-sm';
+          } else {
+            btn.className =
+              'catalog-filter-btn px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#2D3F3B] hover:text-[#1C2826] hover:bg-[#FAF7F2]';
+          }
+        });
+
+        cards.forEach(function (card) {
+          const cardCat = card.getAttribute('data-category');
+          if (!category || category === 'All' || cardCat === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      };
+
+      /**
+       * Clickable single-select pill group for quick estimated quantities
+       */
+      window.selectQuantityPill = function (btn) {
+        const pills = document.querySelectorAll('.quantity-pill');
+        const quantity = btn.getAttribute('data-quantity');
+        const notesEl = document.getElementById('requirement-notes');
+
+        pills.forEach(function (p) {
+          if (p === btn) {
+            p.className = 'quantity-pill px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 border border-transparent shadow-[0_0_15px_rgba(245,158,11,0.5)] transition-all cursor-pointer';
+          } else {
+            p.className = 'quantity-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all cursor-pointer';
+          }
+        });
+
+        if (notesEl && quantity) {
+          const lines = notesEl.value.split(String.fromCharCode(10)).map(function (l) { return l.trim(); }).filter(Boolean);
+          const filtered = lines.filter(function (l) { return !l.startsWith('[Quantity:'); });
+          filtered.unshift('[Quantity: ' + quantity + ']');
+          notesEl.value = filtered.join(String.fromCharCode(10));
+        }
+      };
+
+      /**
+       * "Specs" / "Inquire" button handler:
+       * Pre-selects that product in #product-category dropdown and scrolls smoothly to #quote-form
+       */
+      window.selectProductForQuote = function (productValue) {
+        const selectEl = document.getElementById('product-category');
+        const formSection = document.getElementById('quote-form');
+
+        if (selectEl && productValue) {
+          let matched = false;
+          for (let i = 0; i < selectEl.options.length; i++) {
+            if (selectEl.options[i].value === productValue) {
+              selectEl.selectedIndex = i;
+              matched = true;
+              break;
+            }
+          }
+          if (!matched) {
+            const customOption = document.createElement('option');
+            customOption.value = productValue;
+            customOption.textContent = productValue;
+            selectEl.appendChild(customOption);
+            selectEl.value = productValue;
+          }
+        }
+
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      /**
+       * Interactive Bulk Inquiry Checklist Helper
+       */
+      window.handleChecklistToggle = function (checkbox) {
+        const notesEl = document.getElementById('requirement-notes');
+        const countEl = document.getElementById('checklist-count');
+        if (!notesEl || !checkbox) return;
+
+        const tag = '[Checklist: ' + checkbox.value + ']';
+        const lines = notesEl.value
+          .split(String.fromCharCode(10))
+          .map(function (l) { return l.trim(); })
+          .filter(Boolean);
+
+        const existingIndex = lines.indexOf(tag);
+        if (checkbox.checked && existingIndex === -1) {
+          lines.push(tag);
+        } else if (!checkbox.checked && existingIndex !== -1) {
+          lines.splice(existingIndex, 1);
+        }
+        notesEl.value = lines.join(String.fromCharCode(10));
+
+        if (countEl) {
+          const allChecked = document.querySelectorAll('#bulk-process input[type="checkbox"]:checked');
+          countEl.textContent = String(allChecked.length);
+        }
+      };
+
+      /**
+       * Request a Quote Form Validation & B2B Confirmation State
+       */
+      (function () {
+        const form = document.getElementById('b2b-quote-form');
+        const confirmation = document.getElementById('quote-confirmation');
+        const summaryEl = document.getElementById('confirmation-summary');
+        const waLink = document.getElementById('whatsapp-followup-link');
+
+        function setFieldError(fieldName, message) {
+          const errEl = document.getElementById('err-' + fieldName);
+          if (!errEl) return;
+          if (message) {
+            errEl.textContent = message;
+            errEl.classList.remove('hidden');
+          } else {
+            errEl.textContent = '';
+            errEl.classList.add('hidden');
+          }
+        }
+
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const companyName = (document.getElementById('company-name').value || '').trim();
+            const contactName = (document.getElementById('contact-name').value || '').trim();
+            const email = (document.getElementById('contact-email').value || '').trim();
+            const phone = (document.getElementById('contact-phone').value || '').trim();
+            const productCategory = (document.getElementById('product-category').value || '').trim();
+            const notes = (document.getElementById('requirement-notes').value || '').trim();
+
+            let hasError = false;
+
+            if (companyName.length < 2) {
+              setFieldError('companyName', 'Please enter your company or business name.');
+              hasError = true;
+            } else {
+              setFieldError('companyName', '');
+            }
+
+            if (contactName.length < 2) {
+              setFieldError('contactName', 'Please enter the contact person name.');
+              hasError = true;
+            } else {
+              setFieldError('contactName', '');
+            }
+
+            const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!emailOk) {
+              setFieldError('email', 'Please enter a valid business email address.');
+              hasError = true;
+            } else {
+              setFieldError('email', '');
+            }
+
+            const phoneCleaned = phone.replace(/[\s\-()]/g, '');
+            if (phoneCleaned.length < 7 || !/^\+?[0-9]+$/.test(phoneCleaned)) {
+              setFieldError('phone', 'Please enter a valid contact phone number.');
+              hasError = true;
+            } else {
+              setFieldError('phone', '');
+            }
+
+            if (!productCategory) {
+              setFieldError('productCategory', 'Please select a product category.');
+              hasError = true;
+            } else {
+              setFieldError('productCategory', '');
+            }
+
+            if (hasError) return;
+
+            const waLines = [
+              'Hello Prime Fresh Oil Mills,',
+              'We have submitted a B2B Bulk Quote Inquiry:',
+              '• Company: ' + companyName,
+              '• Contact: ' + contactName,
+              '• Product: ' + productCategory,
+            ];
+            if (notes) {
+              waLines.push('• Requirements: ' + notes);
+            }
+            const waUrl = 'https://wa.me/919057292529?text=' + encodeURIComponent(waLines.join(String.fromCharCode(10)));
+
+            if (waLink) {
+              waLink.setAttribute('href', waUrl);
+            }
+            if (summaryEl) {
+              summaryEl.textContent =
+                'Thank you, ' +
+                contactName +
+                ' (' +
+                companyName +
+                '). Your bulk inquiry for ' +
+                productCategory +
+                ' has been logged for priority review by Prime Fresh Oil Mills. For immediate coordination, connect with us directly on WhatsApp below.';
+            }
+
+            form.classList.add('hidden');
+            if (confirmation) {
+              confirmation.classList.remove('hidden');
+            }
+          });
+        }
+
+        window.resetQuoteForm = function () {
+          if (form && confirmation) {
+            form.reset();
+            confirmation.classList.add('hidden');
+            form.classList.remove('hidden');
+          }
+        };
+      })();
+    </script>
+
+    <!-- Floating Compact Mobile CTA Dock at Bottom-Right for Instant WhatsApp Inquiries -->
+    <div class="fixed bottom-5 right-4 z-40 sm:hidden">
+      <a
+        href="https://wa.me/919057292529"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1C2826] text-[#E9C46A] font-semibold text-xs shadow-xl border border-[#E9C46A]/40 hover:bg-[#141F1D] active:scale-95 transition-all"
+        aria-label="Instant WhatsApp Inquiry"
+      >
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp Inquiry</span>
+      </a>
+    </div>
+  </body>
+</html>
